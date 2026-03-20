@@ -141,7 +141,7 @@ nav ul li a:hover::after{
     color: #add8e6;
     margin-bottom: 10px;
 }
-/*----------Skists--------*/
+
 /* Achievements Section */
 #achievements {
   padding: 60px 40px;
@@ -304,4 +304,99 @@ nav ul li a:hover::after{
   height: 746px;
   border: none;
   border-radius: 8px;
+}
+.copyright{
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: #262626;
+  font-weight: 300;
+  margin-top: 20px;
+}
+/*-------css for small screens--------------*/
+nav .fas{
+  display: none;
+}
+@media only screen and (max-width: 600px){
+  .header-text{
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .header-text h1{
+    font-size: 30px;
+  }
+  nav .fas{
+  display: block;
+  font-size: 25px;
+}
+nav ul{
+  background: #ff004f;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100vh;
+  padding-top: 50px;
+  display: flex;          /* new */
+    flex-direction: column; /* new */
+    align-items: flex-start;
+    z-index: 2;
+    transition: right 0.5s;
+}
+nav ul li{
+    display: block;         /* ensures vertical stacking */
+    margin: 15px;      /* spacing between items */
+  }
+ nav ul .fas{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  cursor: pointer;
+
+ }
+ #about {
+  max-width: 100%;   /* let text take full width */
+  padding: 20px;     /* add breathing room */
+}
+
+#about p {
+  font-size: 16px;   /* slightly smaller for mobile */
+  line-height: 1.5;  /* easier to read */
+  text-align: justify;
+}
+  #header {
+    background-image: none; /* remove laptop background on phones */
+  }
+   #about img {
+    float: right;            /* photo sits on the right */
+    width: 55%;              /* adjust size for phone */
+    margin: 0 0 10px 15px;   /* small gap from text */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .work-list {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;      /* optional: center them */
+  }
+
+  .work {
+    width: 90%;               /* make each box take most of the screen width */
+    margin-bottom: 20px;      /* spacing between boxes */
+  }
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* exactly two columns */
+    gap: 15px;                      /* spacing between boxes */
+    justify-items: center;          /* center each card */
+  }
+
+  .flip-card {
+    width: 100%;   /* each card fills its grid cell */
+    max-width: 180px; /* optional: control card size on phone */
+  }
+
+}
+#about img {
+  display: none; /* don’t show on desktop */
 }
