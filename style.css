@@ -313,15 +313,34 @@ nav ul li a:hover::after{
   font-weight: 300;
   margin-top: 20px;
 }
+.mobile-bg {
+  display: none; /* hide bb1 on desktop */
+}
+
 /*-------css for small screens--------------*/
 nav .fas{
   display: none;
 }
-@media only screen and (max-width: 600px){
-  .header-text{
-    margin-top: 20px;
-    font-size: 16px;
+@media only screen and (max-width: 768px){
+  #header {
+    background-image: none; /* remove bb.png on phones */
   }
+
+  .mobile-bg {
+    display: block;   /* show bb1 on phones */
+    float: right;     /* text wraps around it */
+    width: 55%;       /* adjust size */
+    margin: 0 0 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .header-text {
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
   .header-text h1{
     font-size: 30px;
   }
@@ -364,9 +383,8 @@ nav ul li{
   line-height: 1.5;  /* easier to read */
   text-align: justify;
 }
-  #header {
-    background-image: none; /* remove laptop background on phones */
-  }
+ 
+  
    #about img {
     float: right;            /* photo sits on the right */
     width: 55%;              /* adjust size for phone */
@@ -395,8 +413,12 @@ nav ul li{
     width: 100%;   /* each card fills its grid cell */
     max-width: 180px; /* optional: control card size on phone */
   }
-
 }
-#about img {
-  display: none; /* don’t show on desktop */
+
+
+/* Default (desktop) */
+@media only screen and (min-width: 769px) {
+  #about img {
+    display: none;
+  }
 }
